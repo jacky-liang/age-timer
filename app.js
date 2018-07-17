@@ -15,10 +15,10 @@ $(document).ready(function(){
 
     function load()
     {
-        var x = localStorage.getItem("dob");
-        if (localStorage.getItem("dob") === null)
+        var dob;
+        if (dob = localStorage.getItem("dob"))
         {
-            return new Date(parseInt(localStorage.getItem("dob")));
+            return new Date(parseInt(dob));
         }
         return -1;
     };
@@ -41,16 +41,16 @@ $(document).ready(function(){
     };
 
     function getAge(dob){
-    var now       = new Date;
-    var duration  = now - dob;
-    var years     = duration / 31556900000;
-    
-    var majorMinor = years.toFixed(9).toString().split('.');
-    
-    return {
-        "year": majorMinor[0],
-        "ms": majorMinor[1]
-    };
+        var now       = new Date;
+        var duration  = now - dob;
+        var years     = duration / 31556900000;
+        
+        var majorMinor = years.toFixed(9).toString().split('.');
+        
+        return {
+            "year": majorMinor[0],
+            "ms": majorMinor[1]
+        };
     };
 
     function main() {
