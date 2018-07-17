@@ -8,20 +8,23 @@ $(document).ready(function(){
         renderAgeLoop();
     });
 
-    var save = function(dob)
+    function save(dob)
     {
         localStorage.dob = dob.getTime();
     };
 
-    var load = function()
+    function load()
     {
-        var value;
-        if (value = localStorage.dob)
-            return new Date(parseInt(value));
+        var x = localStorage.getItem("dob");
         return -1;
+        // if (localStorage.getItem("dob") === null)
+        // {
+        //     return new Date(parseInt(localStorage.getItem("dob")));
+        // }
+        // return -1;
     };
 
-    var renderAgeLoop = function()
+    function renderAgeLoop()
     {
         var dob = load();
         $("#choose").css("display", "none");
@@ -33,22 +36,22 @@ $(document).ready(function(){
         }, 100);
     };
 
-    var renderChoose = function()
+    function renderChoose()
     {
         $("#choose").css("display", "block");
     };
 
-    var getAge = function(dob){
-      var now       = new Date;
-      var duration  = now - dob;
-      var years     = duration / 31556900000;
+    function getAge(dob){
+    var now       = new Date;
+    var duration  = now - dob;
+    var years     = duration / 31556900000;
     
-      var majorMinor = years.toFixed(9).toString().split('.');
+    var majorMinor = years.toFixed(9).toString().split('.');
     
-      return {
-          "year": majorMinor[0],
-          "ms": majorMinor[1]
-      }
+    return {
+        "year": majorMinor[0],
+        "ms": majorMinor[1]
+    };
     };
 
     function main() {
