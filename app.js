@@ -16,12 +16,11 @@ $(document).ready(function(){
     function load()
     {
         var x = localStorage.getItem("dob");
+        if (localStorage.getItem("dob") === null)
+        {
+            return new Date(parseInt(localStorage.getItem("dob")));
+        }
         return -1;
-        // if (localStorage.getItem("dob") === null)
-        // {
-        //     return new Date(parseInt(localStorage.getItem("dob")));
-        // }
-        // return -1;
     };
 
     function renderAgeLoop()
