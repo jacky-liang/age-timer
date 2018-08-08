@@ -35,6 +35,29 @@ body, input {
   margin: 0 0 0 2px;
 }
 
+#cite {
+  color: #B0B5B9;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 0 0 0 2px;
+  position: fixed;
+  bottom: 0;
+}
+
+#cite a {
+  color: rgb(154, 157, 160);
+  text-decoration: none;
+}
+#cite a:visited {
+  color: rgb(125, 128, 131);
+}
+#cite a:hover {
+  color: rgb(202, 207, 209);
+}
+#cite a:active {
+  color: rgb(125, 128, 131);
+} 
+
 .count {
   color: #494949;
   margin: 0;
